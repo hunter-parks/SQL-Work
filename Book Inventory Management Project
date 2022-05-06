@@ -1,0 +1,40 @@
+-- BOOK STORE INVENTORY MANAGEMENT PROJECT 
+
+-- Creating the table book_details
+CREATE TABLE book_details (
+	book_name VARCHAR(100),
+	author_name VARCHAR(100),
+	book_description VARCHAR(255),
+	price FLOAT,
+	in_stock INT,
+	primary_keyword VARCHAR(10),
+	secondary_keyword VARCHAR(10),
+	rating FLOAT
+);
+
+-- Now to insert data into table
+INSERT INTO book_details
+VALUES 
+('Let us C', 'Yashwant K.', 'Learn C programming', 200.25, 3, 'C', 'software', 4.5);
+
+INSERT INTO book_details 
+VALUES 
+('Let us C++', 'Yashwant K.', 'Learn C++ programming', 230.25, 5, 'C++', 'C', 4.5);
+
+INSERT INTO book_details
+VALUES 
+('Head first Java', 'Kathy Sierra', 'Learn Java Programming', 330, 10, 'Java', 'JVM', 3.5);
+
+INSERT INTO book_details
+VALUES
+('Java: The complete reference', 'Mc Graw Hill', 'learn Java programming', 783, 4, 'Java', 'Javabeans', 4);
+
+INSERT INTO book_details
+VALUES
+('Thinking in Java', 'Bruce Eckel', 'Java programming basics', 3000, 5, 'Java', 'JVM', 4.5);
+
+-- selecting only Java books
+SELECT * FROM book_details WHERE primary_keyword LIKE '%Java%';
+
+-- selecting only those Java books with rating greather than 4
+SELECT * FROM book_details WHERE primary_keyword LIKE '%Java%' AND rating > 4
